@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Eventos — Venta de Entradas{% endblock %}
+{% block content %}
+<section class="hero">
+    <span class="lead-badge">✨ Tu próxima experiencia empieza aquí</span>
+    <h1>Descubrí y reservá tus entradas</h1>
+    <p class="mb-0">Teatro, cine, conciertos, deportes y mucho más. Elegí tu evento, escogé tu butaca y listo.</p>
+</section>
+
+<h2 class="section-title">Próximos eventos</h2>
+<div class="filter-bar" id="filterBar"></div>
+<div class="row g-4" id="eventsList"></div>
+<div id="eventsEmpty" class="text-center text-muted py-5 d-none">No hay eventos disponibles.</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/events.js?v={{ asset_version }}"></script>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Mis Entradas{% endblock %}
+{% block content %}
+<h2 class="section-title">Mis Entradas</h2>
+<div id="ticketsMsg"></div>
+<div id="ticketsList"></div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/tickets.js?v={{ asset_version }}"></script>
+{% endblock %}
