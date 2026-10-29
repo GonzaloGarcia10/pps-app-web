@@ -15,6 +15,8 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY --chown=app:app . .
 
+RUN chown -R app:app /app
+
 USER app
 
 EXPOSE ${PORT}
