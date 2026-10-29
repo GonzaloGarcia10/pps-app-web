@@ -4,7 +4,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app \
     PIP_NO_CACHE_DIR=1 \
-    PORT=8000
+    PORT=8000 \
+    SEED_ON_START=true
 
 WORKDIR /app
 
@@ -21,4 +22,4 @@ USER app
 
 EXPOSE ${PORT}
 
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]
+CMD ["sh", "-c", "if [ \"$SEED_ON_START\" = \"true\" ]; then python seed.py; fi; exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]
